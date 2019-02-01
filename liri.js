@@ -45,6 +45,7 @@ function spotifySearch(input) {
                     `\n${previewURL}` + 
                     `\n${albumName}` + 
                     `\n**********************************************************************`);
+                
         });
     });
 };
@@ -82,7 +83,7 @@ function doWhatItSays() {
         }
         // console.log(data);
 
-        // Added commas between [0] and [1] so it's easier to read. (e.g. = spotify-this-song,"I Want it That Way").
+        // Added commas between index [0] and [1] so it's easier to read. (e.g. = spotify-this-song,"I Want it That Way").
         let dataArr = data.split(",");
 
         // These variables will store the redisplayed content.
