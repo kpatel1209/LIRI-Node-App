@@ -9,7 +9,7 @@ const axios = require("axios");
 const moment = require("moment");
 const fs = require("fs");
 
-// Assign variables that will store the users' inputs
+// User's inputs will be stored in these variables
 let userChoice = process.argv[2];
 let value = process.argv.slice(3).join(" ");
 
@@ -26,11 +26,11 @@ function concertSearch(value) {
     );
 };
 
-// Function to search for song information via Spotify API
-function spotifySearch(value) {
+// Function to search for track information via Spotify API
+function spotifySearch(entry) {
     spotify.search({
             type: 'track',
-            query: `${value}`,
+            query: `${entry}`,
             limit: 5
         })
         .then(function(response) {
@@ -50,22 +50,23 @@ function spotifySearch(value) {
 };
 
 // Function to search for movie information via OMDb API
-function movieSearch(value) {
-    if (!value) {
-        value = "Mr. Nobody";
-        movieSearch(value);
+function movieSearch(entry) {
+    // If the user does not provide a movie name, then the app will display details from the movie "Mr. Nobody" by default.
+    if (!entry) {
+        entry = "Mr. Nobody";
+        movieSearch(entry);
     } else {
-        // Then run a request with axios to the OMDB API with the movie specified and log the response
-        axios.get(`http://www.omdbapi.com/?t=${value}&y=&plot=short&apikey=trilogy`).then(
+        // If the user provides a movie name, then run a request to the OMDB API using axios and log the results.
+        axios.get(`http://www.omdbapi.com/?t=${entry}&y=&plot=short&apikey=trilogy`).then(
             function (response) {
-                console.log(`Movie Title: ${response.data.Title}`);
-                console.log(`Year Released: ${response.data.Year}`);
-                console.log(`IMDB Rating: ${response.data.imdbRating}`);
-                console.log(`Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}`);
-                console.log(`Country Produced: ${response.data.Country}`);
-                console.log(`Movie Language: ${response.data.Language}`);
-                console.log(`Movie Plot: ${response.data.Plot}`);
-                console.log(`Movie Actors: ${response.data.Actors}`);
+                console.log(`Movie Title: ${response.data.Title}` + 
+                `\nYear Released: ${response.data.Year}` + 
+                `\nRotten Tomatoes Rating: ${response.data.Ratings[1].Value}` + 
+                `\nCountry Produced: ${response.data.Country}` + 
+                `\nMovie Language: ${response.data.Language}` + 
+                `\nMovie Plot: ${response.data.Plot}` + 
+                `\nMovie Actors: ${response.data.Actors}` + 
+                `\n**********************************************************************`);
             }
         );
     }
