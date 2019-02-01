@@ -1,0 +1,80 @@
+require("dotenv").config();
+// Variables for Dependencies
+// Require keys.js file
+const keys = require('./keys');
+
+// Store Spotify key into const variable
+const spotify = new Spotify(keys.spotify);
+
+// Require request NPM
+const request = require('request');
+
+// Require Spotify npm
+const Spotify = require('node-spotify-api');
+
+// Require moment npm
+const moment = require('moment');
+
+// Require axios npm
+const axios = require('axios');
+
+const fs = require('fs');
+
+// Variables for user input
+let userChoice = process.argv[2];
+let value = process.argv.slice(3).join(" ");
+
+//FUNCTION
+// Function to search for Artists' Events via Bands in Town API
+function concertThis (value) {
+    axios.get(`https://rest.bandsintown.com/artists/${value}/events?app_id=codingbootcamp`).then(
+        function(response) {
+            const eventDate = moment(response.data[0].datetime).format('MM/DD/YYYY');
+            console.log(`Venue name: ${response.data[0].venue.name}`);
+            console.log(`Venue location: ${response.data[0].venue.city}`);
+            console.log(`Event Date: ${eventDate}`);
+            console.log(`===================================================================================`);
+        }
+    );
+};
+
+// Function to search for song information via Spotify API
+function spotifyThis(value) {
+    spotify.search({
+        type: 'track',
+        query: `${value}`,
+        limit: 5
+    })
+    .then (function(response){
+        let a = response.tracks.items;
+        // console.log(a)
+        a.forEach(songs => {
+            const artistName = `Artist(s): ${songs.artists[0].name}`;
+            const songName = `Song name: ${songs.name}`;
+            const previewLink = `Preview Link: ${songs.preview_url}`;
+            const albumName = `Album: ${songs.album.name}`;
+            const lineBreak = `===================================================================================`;
+            console.log(artistName);
+            console.log(songName);
+            console.log(previewLink);
+            console.log(albumName);
+            console.log(lineBreak);
+        });
+    });
+};
+
+// Function that selects which command to run based on user's input
+const command = function(inputCase, selectFunction) {
+    switch(inputCase) {
+        case 'concert-this':
+            concertThis(functionData);
+            break;
+        case 'spotify-this-song':
+            spotifyThis(functionData);
+            break;
+        default:
+        console.log('access denied!')
+    }
+};
+
+command();
