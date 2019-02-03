@@ -1,9 +1,9 @@
 # LIRI
 
-### Introduction
+## Introduction
 For this assignment, I built a command line node application called "LIRI".  LIRI is a _Language_ Interpretation and Recognition Interface that takes in parameters and give you back data.  LIRI is programmed to provide you with information for concerts, songs, and movies.
 
-### How to use LIRI
+## How to use LIRI
 Type "**node liri.js**" in your command line and press **Enter** to see how to utililze the four command lines below:
 
    * `concert-this`
@@ -13,6 +13,8 @@ Type "**node liri.js**" in your command line and press **Enter** to see how to u
    * `movie-this`
 
    * `do-what-it-says`
+
+## See what each command line does
 
 ### Concert-this
 This function will take the artist's or band's name that you enter and will then return their concert information from the Bands in Town API.
