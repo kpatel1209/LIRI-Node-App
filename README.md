@@ -29,3 +29,7 @@ This function will take the movie's title name will then return the information 
 
 ![Image of movie-this](images/movie-this.jpg)
 
+### Do-what-it-says
+This function will use the built-in `fs` Node package to get the text from the **random.txt** file and will then use it to call the appropriate command from LIRI.
+
+![Image of do-what-it-says](images/do-what-it-says.jpg)
