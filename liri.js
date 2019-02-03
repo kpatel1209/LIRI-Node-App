@@ -77,7 +77,7 @@ function movieSearch(input) {
 function doWhatItSays() {
     // fs.readFile read what is in the the "random.txt" file and searches for the results accordingly.
     fs.readFile("random.txt", "utf8", function (err, data) {
-        // If the search causes and error, then the error will be logged.
+        // If the search causes an error, then the error will be logged.
         if (err) {
             return console.log(err);
         }
