@@ -17,7 +17,7 @@ Type "**node liri.js**" in your command line and press **Enter** to see how to u
 ## Watch what each command line does
 
 ### Concert-this
-This function allows the user to enter their favorite artist's or band's name and will then return their concert information from the Bands in Town API.
+This function allows the user to enter their favorite artist's or band's name and will then provide their concert information from the Bands in Town API.
 
 ![gif of concert-this](gifs/concert-this.gif)
 
