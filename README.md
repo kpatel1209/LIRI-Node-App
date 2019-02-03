@@ -14,24 +14,24 @@ Type "**node liri.js**" in your command line and press **Enter** to see how to u
 
    * `do-what-it-says`
 
-## See what each command line does
+## Watch what each command line does
 
 ### Concert-this
-This function will take the artist's or band's name that you enter and will then return their concert information from the Bands in Town API.
+This function allows the user to enter their favorite artist's or band's name and will then return their concert information from the Bands in Town API.
 
 ![gif of concert-this](gifs/concert-this.gif)
 
 ### Spotify-this-song
-This function will take the name of the song you entered and will then return the song's information from Spotify's API.  The application will display up to five results from a single search.
+This function gives the user the option of entering the name of a song and will then show that song's information from Spotify's API.  The application will display up to five results from a single search.
 
 ![Image of spotify-this-song](gifs/spotify-this-song.gif)
 
 ### Movie-this
-This function will take the movie's title name will then return the information for that movie from OMDb's API.
+This function will take the movie's title name and will then return the information for that movie from OMDb's API.
 
 ![Image of movie-this](gifs/movie-this.gif)
 
 ### Do-what-it-says
-This function will use the built-in `fs` Node package to get the text from the **random.txt** file and will then use it to call the appropriate command from LIRI.
+This function uses the built-in `fs` Node package to capture the text from the **random.txt** file and will then use that text to call the appropriate command from LIRI.  Any of the three commands above can be entered into the **random.txt** file at a single time.
 
 ![Image of do-what-it-says](gifs/do-what-it-says.gif)
