@@ -8,8 +8,11 @@ For this assignment, I built a command line node application called "LIRI".  LIR
 #### Concerts
 `node liri.js concert-this <artist/band name here>`
 This will take the artist's or band's name and return their concert information below:
-    * Name of the venue
 
-    * Venue location
+     * Name of the venue
 
-    * Date of the Event
+     * Venue location
+
+     * Date of the Event
+
+![Image of concert-this](images/concert-this.jpg)
