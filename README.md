@@ -19,7 +19,7 @@ Type "**node liri.js**" in your command line and press **Enter** to see how to u
 ### Concert-this
 This function will take the artist's or band's name that you enter and will then return their concert information from the Bands in Town API.
 
-![Image of concert-this](images/concert-this.jpg)
+![gif of concert-this](gifs/concert-this.gif)
 
 ### Spotify-this-song
 This function will take the name of the song you entered and will then return the song information from Spotify's API.
