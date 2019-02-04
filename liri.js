@@ -119,7 +119,7 @@ function commandLiri() {
     } else if (userChoice === "do-what-it-says") {
         doWhatItSays();
     } else {
-        console.log(`Please start by typing "node liri.js" and then enter any of the commands below:
+        console.log(`Thank you for checking out my LIRI Node application.  Please start by typing "node liri.js" into the command line and then enter any of the commands below:
         \n concert-this "name of an artist"
         \n spotify-this-song "name of a song"
         \n movie-this "name of a movie"
