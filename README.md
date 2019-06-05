@@ -1,4 +1,4 @@
-# LIRI
+# HW #8 - LIRI Node App
 
 ## Introduction
 For this assignment, I built a command line node application called "LIRI".  LIRI is a _Language_ Interpretation and Recognition Interface that takes in parameters and returns back data.  LIRI is programmed to provide you with information for concerts, songs, and movies.
